@@ -278,11 +278,11 @@ def translate_terminology(codeSystem, code):
                 if element["code"] == code:
                     response[0]["outcome"] = 'match found'
                     response[0]["code"] = element["target"][0]["code"]
-                    response[0]["system"] = 'https://ncithesaurus.nci.nih.gov/'
+                    response[0]["system"] = 'https://ncithesaurus.nci.nih.gov'
                     response[0]["display"] = element["target"][0]["display"]
                     return response
             response[0]["outcome"] = 'no match found'
-            response[0]["system"] = 'https://ncithesaurus.nci.nih.gov/'
+            response[0]["system"] = 'https://ncithesaurus.nci.nih.gov'
             return response
         else:
             abort(500, "HAPI server error")
@@ -296,11 +296,11 @@ def translate_terminology(codeSystem, code):
                 if element["code"] == code:
                     response[0]["outcome"] = 'match found'
                     response[0]["code"] = element["target"][0]["code"]
-                    response[0]["system"] = 'https://disease-ontology.org/'
+                    response[0]["system"] = 'https://disease-ontology.org'
                     response[0]["display"] = element["target"][0]["display"]
                     break
                 response[0]["outcome"] = 'no match found'
-                response[0]["system"] = 'https://disease-ontology.org/'
+                response[0]["system"] = 'https://disease-ontology.org'
         else:
             abort(500, "HAPI server error")
 
@@ -312,11 +312,11 @@ def translate_terminology(codeSystem, code):
                 if element["code"] == code:
                     response[1]["outcome"] = 'match found'
                     response[1]["code"] = element["target"][0]["code"]
-                    response[1]["system"] = 'https://www.ncbi.nlm.nih.gov/medgen/'
+                    response[1]["system"] = 'https://www.ncbi.nlm.nih.gov/medgen'
                     response[1]["display"] = element["target"][0]["display"]
                     break
                 response[1]["outcome"] = 'no match found'
-                response[1]["system"] = 'https://www.ncbi.nlm.nih.gov/medgen/'
+                response[1]["system"] = 'https://www.ncbi.nlm.nih.gov/medgen'
         else:
             abort(500, "HAPI server error")
         return response
@@ -331,11 +331,11 @@ def translate_terminology(codeSystem, code):
                 if element["code"] == code:
                     response[0]["outcome"] = 'match found'
                     response[0]["code"] = element["target"][0]["code"]
-                    response[0]["system"] = 'https://disease-ontology.org/'
+                    response[0]["system"] = 'https://disease-ontology.org'
                     response[0]["display"] = element["target"][0]["display"]
                     break
                 response[0]["outcome"] = 'no match found'
-                response[0]["system"] = 'https://disease-ontology.org/'
+                response[0]["system"] = 'https://disease-ontology.org'
         else:
             abort(500, "HAPI server error")
 
@@ -347,11 +347,11 @@ def translate_terminology(codeSystem, code):
                 if element["code"] == code:
                     response[1]["outcome"] = "match found"
                     response[1]["code"] = element["target"][0]["code"]
-                    response[1]["system"] = "https://www.ncbi.nlm.nih.gov/medgen/"
+                    response[1]["system"] = "https://www.ncbi.nlm.nih.gov/medgen"
                     response[1]["display"] = element["target"][0]["display"]
                     break
                 response[1]["outcome"] = "no match found"
-                response[1]["system"] = "https://www.ncbi.nlm.nih.gov/medgen/"
+                response[1]["system"] = "https://www.ncbi.nlm.nih.gov/medgen"
         else:
             abort(500, "HAPI server error")
         return response
