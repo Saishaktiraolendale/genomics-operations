@@ -63,3 +63,19 @@ query = {
 resultSet = (txImplication_db.find(query))
 for result in resultSet:
     print(result)
+
+
+new_subject = "PH800"
+
+print(f"\n[Patient Info for {new_subject}]")
+new_patient_data = patients_db.find_one({"patientID": new_subject})
+if new_patient_data:
+    print(new_patient_data)
+else:
+    print(f"No patient found with ID: {new_subject}")
+
+
+
+
+
+
