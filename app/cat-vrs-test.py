@@ -77,5 +77,8 @@ else:
 
 
 
+print("\n[All txImplication Records]")
+for doc in txImplication_db.find():
+    print(doc)
 
 
