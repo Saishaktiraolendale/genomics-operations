@@ -77,8 +77,18 @@ else:
 
 
 
-print("\n[All txImplication Records]")
-for doc in txImplication_db.find():
+print("\n[txImplication Record for CYP2D6 and Paroxetine]")
+
+query = {
+    "gene.display": "CYP2D6",
+    "medicationAssessed.display": "Paroxetine"
+}
+
+doc = txImplication_db.find_one(query)
+if doc:
     print(doc)
+else:
+    print("No matching txImplication document found.")
+
 
 
