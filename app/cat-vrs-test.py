@@ -90,5 +90,36 @@ if doc:
 else:
     print("No matching txImplication document found.")
 
+# -----------------------------------------------------
+# 🧪 MongoDB Queries for txImplication Collection
+# -----------------------------------------------------
+
+print("\n[Query 1] Total txImplication documents:")
+count = txImplication_db.count_documents({})
+print(f"Total documents in txImplication: {count}")
+
+print("\n[Query 2] Records where gene is CYP2D6 and medication is Paroxetine:")
+query = {
+    "gene.display": "CYP2D6",
+    "medicationAssessed.display": "Paroxetine"
+}
+results = txImplication_db.find(query)
+
+match_count = 0
+for doc in results:
+    match_count += 1
+    print({
+        "variationID": doc.get("variationID"),
+        "gene": doc.get("gene"),
+        "genotype": doc.get("genotype"),
+        "predictedImplication": doc.get("predictedImplication"),
+        "evidenceLevel": doc.get("evidenceLevel"),
+        "medicationAssessed": doc.get("medicationAssessed")
+    })
+
+if match_count == 0:
+    print("No matching documents found.")
+else:
+    print(f"✅ Found {match_count} matching documents.")
 
 
