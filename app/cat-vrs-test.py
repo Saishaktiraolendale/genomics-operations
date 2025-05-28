@@ -64,7 +64,6 @@ resultSet = (txImplication_db.find(query))
 for result in resultSet:
     print(result)
 
-
 new_subject = "PH800"
 
 print(f"\n[Patient Info for {new_subject}]")
@@ -121,5 +120,6 @@ if match_count == 0:
     print("No matching documents found.")
 else:
     print(f"✅ Found {match_count} matching documents.")
+
 
 
